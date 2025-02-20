@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/62b8b6767e.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="pictures\logo_vector.jpg">
+    <title>The Bleep Bloop Project</title> <!-- the content here will only show in the tab and in the metadata about the page -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="reset.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-container">
+            <div class= "navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Artist of the Week</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li ><button id="theme-button">Toggle Dark Mode</button></li>
+                    <li><a id="motion-button" href="#">Reduce Motion</a></li>
+                </ul>
+            </div>
+
+            <!-- Grid decorations -->
+            <div class="grid-decoration top-left"></div>
+            <div class="grid-decoration top-right"></div>
+
+            <div class="image-strip"></div>
+
+            <div class="logo-container">
+                <div class="project-tag">introducing</div>
+                <h1 class="main-title">The Bleep Bloop Project</h1>
+                <p class="subtitle">A food security initiative aimed at indie electronic artists</p>
+                <p class="subtext">/a musical experiment/</p>
+            </div>
+        </div>
+
+        
+        <!-- Pictures Section -->
+        <div class="pictures">
+            <img src="pictures/pngtree-sine-waves-wallpaper-material-texture-photo-picture-image_5357969.jpg" alt="Picture 1">
+            <img src="pictures\graphic_by_Lindsey_Whittle.jpg" alt="Picture 2">
+            <img src="pictures\2-martin-1-1829406756.jpg" alt="Picture 3">
+        </div>
+
+        <!-- About Section -->
+        <div class="statement_para revealable active">
+            <h2 style= "color:red;">About My Topic</h2>
+            <p>Not every artist can support themselves solely from their art. This becomes truer the more niche the art genre is. 
+            In a music industry oversaturated with mainstream festival acts, how do artists with a passion to innovate sustain themselves? 
+            We hope to be a bridge, helping our community of artists survive while giving them the tools they need to make their music stand out.
+            </p>
+        </div>
+
+        <section class = "blog-section">
+            <h2> What is food insecurity?</h2>
+            <a href="https://www.feedingamerica.org/hunger-in-america/food-insecurity"> report on hunger-in-america</a>
+            <p> While food insecurity remains a prevalent issue in may communities around the 
+                the US, a lot of marginalized communities such as people of color and LGBTQ+ communities 
+                are at higher risk of food insecurity as a result of discrimination and poverty. The elctronic music
+                scene has been a source of expression for such communities since the late 1960s, and a lot of music
+                we know and love today would not have existed without such a space.
+            </p>
+
+        </section> 
+        
+
+        <p class="dark-mode"></p>
+        <div class="petition-container revealable active" id="petition">
+            <h2>Sign Our Petition 📢</h2>
+            <div class="petition-para">
+                <p>Support the voices and creativity of indie electronic music artists by signing our petition! 
+                Together, we can ensure that the electronic music scene remains vibrant, inclusive, 
+                and accessible to all artists, not just the biggest players. 
+                Show your support for indie electronic music and the artists who dare to be different! </p>
+            </div>
+        
+            <div class="signatures">
+                <p>🖊️ DJ from Brooklyn supports this.</p>
+                <p>🖊️ Amy from Queens supports this.</p>
+                <p>🖊️ Teresa from Harlem supports this.</p>
+                <p> </p>
+            </div>
+        
+            <!--- Sign Petition Form --->
+            <form id="sign-petition" title="sign-petition" style="margin: 10px;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" required><br><br>
+
+                <label for="hometown">Hometown:</label><br>
+                <input type="text" id="hometown" name="hometown"><br><br>
+            </form>
+            
+            <!--- Sign Now Button --->
+            <button id="sign-now-button" style="margin: 10px">Sign Now</button>
+        </div>
+
+        <!-- Modal -->
+        <div id="thanks-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div id="modal-text-container">
+                <p id = 'thanks-modal-content'></p>
+                <!-- button here (stretch feature) -->
+            </div>
+            <img src="pictures/1649425183-edm-djing-header-4037993716.jpg" alt="a black DJ">
+
+        </div>
+
+        <!-- Footer -->
+        <p class="footer" id="interesting">Learn More</p>
+        <script src="index.js"></script>
+    </div>
+</body>
+
+</html>

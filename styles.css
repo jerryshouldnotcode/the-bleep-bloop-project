@@ -1,0 +1,410 @@
+
+.container {
+    max-width: 1100px; 
+    margin: 0 auto; /* centers the container */
+    object-fit: contain;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header Grid Layout */
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: -30px;
+    background-color: rgb(255, 255, 202);
+    padding: 20px;
+    position: relative;
+}
+
+/* Top navigation bar */
+.navbar {
+    grid-column: 4 / 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 10px solid #333;
+    font-size: 12px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.top-nav span {
+    color: #333;
+}
+
+/* Logo section */
+.logo-container {
+    grid-column: 1 / 13;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+/* Project tag */
+.project-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.project-tag::before {
+    content: "✶";
+    color: #ff3333;
+}
+
+/* Main title */
+.main-title {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: lowercase;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 24px;
+    color: #333;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Grid decorations */
+.grid-decoration {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+/* Image strips */
+.image-strip {
+    grid-column: 1 / 4;
+    height: 60px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+/* Category tag */
+.category-tag {
+    background-color: #ff3333;
+    color: white;
+    padding: 15px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.statement_para {
+    margin-left: 15px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.blog-section {
+    margin-left: 15px;
+    padding: 20px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333; /* Softer black */
+    color: #ffffff;
+    
+    .main-title{
+        color:antiquewhite;
+    }
+
+    .subtitle{
+        color:white;
+    }
+
+    .header-container{
+        background-color: black;
+    }
+
+    #interesting{
+        background-color: black;
+        color:white;
+    }
+    .category-tag, .image-strip{
+        background-color: rgb(255, 255, 202);
+    }
+
+}
+
+#theme-button {
+    font-family: 'JetBrains Mono', monospace;
+    padding: 8px 16px;
+    color: #ffffff;
+    background-color: #098b1faf;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#theme-button:hover {
+    background-color: #ff4444;
+}
+
+.pictures {
+    display: flex;
+    max-width: 100%; /* Full width container */
+    height: auto;
+    gap: 20px; /* Space between images */
+    padding: 20px;
+    justify-content: center;
+}
+
+.pictures img {
+    max-width: 30%; /* Three images per row */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.pictures img:hover {
+    transform: scale(1.02);
+}
+
+.navbar{
+    margin-top: 8px;  /* Align with the top "The" */
+}
+
+/* Navigation Styles */
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    color: white;
+    top: 0;
+    right: 40px; /* Increased spacing from edge */
+    padding: 10px;
+    margin: 0;
+    z-index: 1000;
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0;
+}
+
+.navbar ul li a {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: all 0.2s;
+}
+
+.navbar ul li a:hover {
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/*modal content */
+/* the modal that covers the background and prevents user interactions */
+.modal {
+    display: none; /* hides the modal from view by default*/
+    position: fixed; /* keeps the modal in one place */
+    z-index: 2; /* positions the modal on top of all other elements on the screen */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* 40% opacity black - other elements can still be seen */
+    flex-direction: column; /* these flexbox rules center the content on the screen */
+    align-items: center;
+    justify-content: center;
+}
+  
+/* box that contains all the content and images */
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    text-align: center; /* Center modal content */
+}
+
+.modal-content {
+    margin: 15% auto; /* Center the modal vertically */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* Constrain modal width */
+    width: 90%; /* Ensure responsiveness */
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 100%; /* Prevent image from exceeding modal width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+#modal-text-container {
+    display: flex; /* adds flexbox to center the text and buttons (stretch feature) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Petition Styles */
+.petition-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.petition-para {
+    margin: 20px;
+    line-height: 1.6;
+    margin-left: 10px;
+}
+
+.signatures {
+    width: 40%;
+}
+
+/* Flexbox Styles */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-item:nth-of-type(1) {
+    width: 25%;
+}
+
+.flex-item {
+    background: white;
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: black;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Utility Classes */
+.revealable{
+    position: relative;
+    transform: translateY(150);
+    opacity: 0;
+    transition: all 2s ease;
+
+}
+
+.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#interesting {
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+#reduce-motion {
+    animation: none;
+    transition: none;
+    transition: 0s;
+    opacity: 1;
+
+}
+
+.invalid {
+    border: 2px solid #ff3333;
+    background-color: #fff5f5;
+    border-radius: 4px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .petition-container {
+        flex-direction: column;
+    }
+    
+    .petition-para,
+    .signatures {
+        width: 100%;
+    }
+    
+    .pictures img {
+        max-width: 100%;
+    }
+    
+    .navbar ul {
+        right: 20px;
+    }
+}
